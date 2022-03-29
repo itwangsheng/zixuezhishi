@@ -1,0 +1,64 @@
+-
+    apiname: topics
+    request:
+        method: post
+        files :
+        data: {"accesstoken":"1d0264a6-c90b-4120-91a1-e69e7a53bc1b","title":"新建的主题","tab":"share","content":"这是练习"}
+        headers:
+    validate: #验证结果
+        success: True
+    extract: {"top_id": "topic_id"}
+
+-
+    apiname: topic/${{top_id}}
+    request:
+        method: get
+        files :
+        data:
+        headers:
+    validate: #验证结果
+        success: True
+        loginname: user6
+
+#公司项目不提供演示
+#-
+#    apiname: xxx
+#    request:
+#        method: post
+#        files :
+#        data: {"mobile":"13922862325","imsi":"sssdsfsdf"}
+#        headers:
+#    validate: #验证结果
+#        stutas: "0"
+#
+#-
+#    apiname: xxx
+#    request:
+#        method: post
+#        files :
+#        data: {"tddid":"V10019100011143","networkflag":"N","site":"惠州"}
+#        headers:
+#    validate: #验证结果
+#        stutas: "0"
+#
+#-
+#    apiname: xxx
+#    request:
+#        method: post
+#        files :
+#        data: {"username":"","tddid":"V10019100011143"}
+#        headers:
+#    validate: #验证结果
+#        tddid: "V10019100011143"
+#-
+#    apiname: xxx
+#    request:
+#        method: post
+#        files: ([('faceImageFile', open(r'D:\自动化框架\jiekou_work\images\1.png','rb'))])
+#        data: {'tddid': 'V10019100011250',
+#               'relateImageName': 'test'}
+#        headers: {
+#            'Content-Type': 'application/x-www-form-urlencoded'
+#        }
+#    validate: #验证结果
+#        status: 0
